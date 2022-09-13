@@ -14,5 +14,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag node_test:$(date +%s)
+    - name: Build and run the Docker image
+      run: |
+            docker build . --file Dockerfile --tag nodev3
+            cd /var/lib/jenkins/workspace/node.js
+            docker stop $(docker ps -a -q)
+            docker rm $(docker ps -a -q)
+            docker run -d --name node.app -p 82:82 node:v3
+      
