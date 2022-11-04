@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
       </head>
       <body>
         <section>
-          <h2>My devops</h2>
+          <h2>MY course</h2>
           <h3>${userGoal}</h3>
         </section>
         <form action="/store-goal" method="POST">
