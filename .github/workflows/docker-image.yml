@@ -18,7 +18,7 @@ jobs:
       run: |
             docker build . --file Dockerfile --tag node:v3
             cd /var/lib/jenkins/workspace/node.js
-            ##docker stop $(docker ps -a -q)
-            ##docker rm $(docker ps -a -q)
+            docker stop $(docker ps -a -q)
+            docker rm $(docker ps -a -q)
             docker run -d --name node.app -p 82:82 node:v3
       
