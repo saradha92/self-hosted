@@ -14,9 +14,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build and run the Docker image
-      run: |
-            docker build . --file Dockerfile --tag node:v3
+      run: | 
             cd /home/devopsindia/runner2/_work/node.js/node.js
+            docker build . --file Dockerfile --tag node:v3
             docker stop $(docker ps -a -q)
             docker rm $(docker ps -a -q)
             docker run -d --name node.app -p 82:82 node:v3
