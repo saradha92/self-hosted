@@ -17,7 +17,8 @@ jobs:
       run: | 
             cd /home/devopsindia/runner2/_work/node.js/node.js
             docker build . --file Dockerfile --tag node:v3
+            docker run -d --name node.app -p 82:82 node:v3
             docker stop $(docker ps -a -q)
             docker rm $(docker ps -a -q)
-            docker run -d --name node.app -p 82:82 node:v3
+            
       
