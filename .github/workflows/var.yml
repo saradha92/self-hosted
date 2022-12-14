@@ -5,7 +5,7 @@ on:
       - master
 jobs:
   example-job:
-   runs-on: self-hosted, Linux, x64
+   runs-on: [self-hosted, linux, x64]
    name: The First Demo Job
    steps:
     - name: Print first example job
