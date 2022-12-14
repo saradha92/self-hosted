@@ -16,6 +16,8 @@ jobs:
        VAR4: workflow jobs
       run: |
        echo $VAR1 $VAR2 $VAR3 $VAR4.
+    - name: Location
+      run: pwd
        
        
     
