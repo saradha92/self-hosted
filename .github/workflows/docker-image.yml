@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build and run the Docker image
       run: | 
-            cd /home/devopsindia/runner2/_work/node.js/node.js
+            cd /home/saradha/actions-runner/_work/self-hosted/self-hosted
             docker build . --file Dockerfile --tag node:v3
             docker run -d --name node.app -p 82:82 node:v3
             docker stop $(docker ps -a -q)
